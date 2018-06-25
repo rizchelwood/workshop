@@ -4,8 +4,12 @@
   "description": "Workshop to build an application with React, Redux and GraphQL with testing and deployments to Kubernetes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "author": "Rizchel Dayao",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "vuepress": "^0.10.2"
+  }
 }
