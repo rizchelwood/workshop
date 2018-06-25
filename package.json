@@ -1,0 +1,11 @@
+{
+  "name": "workshop",
+  "version": "1.0.0",
+  "description": "Workshop to build an application with React, Redux and GraphQL with testing and deployments to Kubernetes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rizchel Dayao",
+  "license": "ISC"
+}
