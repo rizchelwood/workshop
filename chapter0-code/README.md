@@ -1,3 +1,3 @@
-# Application boilerplate built on create-react-app
+# Chapter 0 Code
 
-This is the boilerplate we will be building on to create our react app. 
+This is the starting code for the workshop. Use this as a boilerplate to complete the other chapters in the workshop. 

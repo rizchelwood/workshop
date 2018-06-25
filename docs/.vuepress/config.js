@@ -5,7 +5,7 @@ module.exports = {
       repo: 'rizcheldayao/workshop',
         sidebar: [
           '/',
-          ['ch0', 'Chapter 0: Introducing the app boilerplate'],
+          ['ch1', 'Chapter 1: Build the app boilerplate'],
         ]
       }
   };

@@ -4,6 +4,10 @@ The objective of this workshop is to have the attendee complete a full React app
 
 The workshop will be broken up into several chapters, each one covering a different topic to guide the attendee to build the final application. Each chapter can either be completed individually or groups. If an attendee gets lost at any time, the completed code for each chapter is provided, which can be downloaded into a new Code Sandbox. 
 
+## App Content
+
+We will be building a Pokemon app! Our app will be calling the Pokedex API to get a list of Pokemon to show on the UI. The user will be able to add Pokemon to their Pokedex, which will open up another view that allows the user to manipulate their Pokedex items. 
+
 ## Workshop Content 
 - Chapter 0: Introducing the app boilerplate
   - Basic introduction to app's code structure and introducing create-react-app boilerplate code
