@@ -6,6 +6,7 @@ module.exports = {
         sidebar: [
           '/',
           ['ch1', 'Chapter 1: Build the app boilerplate'],
+          ['ch2', 'Chapter 2: Build the Pokemon list'],
         ]
       }
   };

@@ -12,7 +12,7 @@ Note: we will be using ES6 in this workshop.
 
 ## Applying ESLint rules
 
-ESLint is an open source project and tool that identifies and reports patterns found in JavaScript code. It allows you to identify certain rules to ensure use of clear and consistent coding conventions, while automating the application of those rules. 
+> ESLint is an open source project and tool that identifies and reports patterns found in JavaScript code. It allows you to identify certain rules to ensure use of clear and consistent coding conventions, while automating the application of those rules. 
 
 The dependencies have already been added to the `package.json`. If you'd like to view them, they are all the dependencies that start with `eslint`. 
 
