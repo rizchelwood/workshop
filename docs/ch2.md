@@ -1,4 +1,4 @@
-# Chapter 1: Build Pokemon List 
+# Chapter 2: Build Pokemon List 
 
 Our goal for this section is to create a container and component to build a list of Pokemon with mock data. You will learn how to more about creating a container and component, and pass props from parent to child. 
 
@@ -34,7 +34,9 @@ export default Pokemon;
 
 Import the Pokemon container into `App.js` file below the other imports `import Pokemon from './containers/Pokemon';`
 
-Insert the styles we will use to display a list of Pokemon in between the imports and class and apply to the `<div>` tag. 
+Create a `<Pokemon />` tag after the `<h1>` tag.
+
+In the Pokemon container, insert the styles we will use to display a list of Pokemon in between the imports and class and apply to the `<div>` tag. 
 
 ```
 const listStyle = {
@@ -152,6 +154,8 @@ The above code is passing the pokemon object and card styles as props to the Car
 > Props aka properties are parameters of a component. Props are how components talk to each other and how parent containers or components can pass down data to child components. 
 
 We need to add the prop-types npm dependency to be able to use props in the component. If you're using CodeSanbox, click 'Add Dependency' under the Dependencies dropdown and enter `prop-types`. If you're doing this locally, do an `npm install prop-types --save`. 
+
+Insert `import PropTypes from 'prop-types';` in the Card component below the other imports.
 
 React has built-in typechecking on props for a component. Let's add that to our Card component. At the end of the class and before the export insert the code below: 
 
