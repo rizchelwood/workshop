@@ -29,6 +29,13 @@ class Pokemon extends Component {
               name
               image
               types
+              attacks {
+                special {
+                  name
+                  type
+                  damage
+                }
+              }
             }
           }
         `}

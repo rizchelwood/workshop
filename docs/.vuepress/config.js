@@ -7,6 +7,7 @@ module.exports = {
           '/',
           ['ch1', 'Chapter 1: Build the app boilerplate'],
           ['ch2', 'Chapter 2: Build the Pokemon list'],
+          ['ch3', 'Chapter 3: Pull in data from Pokemon API using GraphQL'],
         ]
       }
   };
