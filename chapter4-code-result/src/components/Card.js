@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 
 class Card extends Component {
   render() {
-    const { styles, pokemon } = this.props;
+    const { styles, pokemon, addPokemon } = this.props;
     return (
-      <div key={pokemon.name} style={styles}>
-        <img src={pokemon.image} alt={pokemon.name} style={{width: '100px', height: '100px'}}/>
+      <div key={pokemon.name} style={styles.card}>
+        <img src={pokemon.image} alt={pokemon.name} style={styles.image}/>
         <p>{pokemon.name}</p>
         <p>{pokemon.types.toString()}</p>
+        <button onClick={() => addPokemon(pokemon)}>Add Pokemon</button>
       </div>
     );
   }
@@ -17,6 +18,7 @@ class Card extends Component {
 Card.propTypes = {
   styles: PropTypes.object.isRequired,
   pokemon: PropTypes.object.isRequired,
+  addPokemon: PropTypes.func,
 }
 
 export default Card;
