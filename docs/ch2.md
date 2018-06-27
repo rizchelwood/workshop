@@ -39,67 +39,68 @@ Create a `<Pokemon />` tag after the `<h1>` tag.
 In the Pokemon container, insert the styles we will use to display a list of Pokemon in between the imports and class and apply to the `<div>` tag. 
 
 ```
-const listStyle = {
-  display: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'center',
+const styles = {
+  list: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
+  card: {
+    padding: '20px',
+    width: '200px',
+    height: '250px',
+    border: '1px solid red',
+    margin: '20px',
+  },
+  image: {
+    width: '100px',
+    height: '100px',
+  }
 };
 ```
 
 ```
-<div style={listStyle}>
+<div style={styles.list}>
 ```
 
 Let's create some Pokemon mock data for our container to display. 
 
-Insert the code below under the `listStyle` variable. 
+Insert the code below under the `styles` variable. 
 
 ```
 const mockData = [{
   name: 'Bulbasaur',
-  image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+  image: 'https://img.pokemondb.net/artwork/bulbasaur.jpg',
   abilities: 'Chlorophyll, Overgrow',
   type: 'Grass, Poison'
 },
 {
   name: 'Charmander',
-  image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png',
+  image: 'https://img.pokemondb.net/artwork/charmander.jpg',
   abilities: 'Solar Power, Blaze',
   type: 'Fire'
 },
 {
   name: 'Squirtle',
-  image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png',
+  image: 'https://img.pokemondb.net/artwork/squirtle.jpg',
   abilities: 'Rain Dish, Torrent',
   type: 'Water'
 },
 {
   name: 'Pikachu',
-  image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
+  image: 'https://img.pokemondb.net/artwork/pikachu.jpg',
   abilities: 'Lightning Rod, Static',
   type: 'Electric'
 }]
 ```
 
-We need to create a card for each element in the array to display to the user. Let's use the `map()` method to create a new array returning the a card for each Pokemon. We will also apply styling for each card. 
-
-Insert styles for the Card component between the `listStyle` and `mockData` variables.
-
-```
-const cardStyle = {
-  padding: '20px',
-  width: '200px',
-  height: '250px',
-  border: '1px solid red',
-  margin: '20px',
-};
-```
+We need to create a card for each element in the array to display to the user. Let's use the `map()` method to create a new array returning the a card for each Pokemon.
 
 Insert the `map()` function within the `<div>` tags. 
 
 ```
   {mockData.map(pokemon => {
-    return <div key={pokemon.name} style={cardStyle}>
+    return <div key={pokemon.name} style={styles}>
         <img src={pokemon.image} alt={pokemon.name}/>
         <p>{pokemon.name}</p>
         <p>{pokemon.abilities}</p>
@@ -135,7 +136,7 @@ Import the Card container into `src/containers/Pokemon.js` file below the other 
 Replace
 
 ```
-return <div key={pokemon.name} style={cardStyle}>
+return <div key={pokemon.name} style={styles}>
     <img src={pokemon.image} alt={pokemon.name}/>
     <p>{pokemon.name}</p>
     <p>{pokemon.abilities}</p>
@@ -146,7 +147,7 @@ return <div key={pokemon.name} style={cardStyle}>
 with 
 
 ```
-return <Card key={pokemon.name} pokemon={pokemon} styles={cardStyle} />
+return <Card key={pokemon.name} pokemon={pokemon} styles={styles} />
 ```
 
 The above code is passing the pokemon object and card styles as props to the Card component. This will allow us to use these variables in our Card component. 
@@ -169,8 +170,8 @@ Card.propTypes = {
 We need to use these props in our component. Insert `const { styles, pokemon } = this.props;` in between `render()` and `return`. Now let's show our prop values to the user. Replace the `<div><div/>` tags with the following: 
 
 ```
-<div key={pokemon.name} style={styles}>
-  <img src={pokemon.image} alt={pokemon.name}/>
+<div key={pokemon.name} style={styles.card}>
+  <img src={pokemon.image} alt={pokemon.name} style={styles.image}/>
   <p>{pokemon.name}</p>
   <p>{pokemon.abilities}</p>
   <p>{pokemon.type}</p>

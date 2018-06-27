@@ -1,4 +1,4 @@
-# Chapter 3: Pull in data from API using GraphQL
+# Chapter 3: Pull in data from Pokemon API using GraphQL
 
 Our goal for this section is to make an API request using GraphQL. You will learn how to integrate GraphQL into your React app.
 
@@ -76,7 +76,7 @@ query={gql`
       types
     }
   }
-`
+`}
 ```
 
 We need to pass the data to our 'Card' component and show a loading and error state. 

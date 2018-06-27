@@ -5,8 +5,8 @@ class Card extends Component {
   render() {
     const { styles, pokemon } = this.props;
     return (
-      <div key={pokemon.name} style={styles}>
-        <img src={pokemon.image} alt={pokemon.name} style={{width: '100px', height: '100px'}}/>
+      <div key={pokemon.name} style={styles.card}>
+        <img src={pokemon.image} alt={pokemon.name} style={styles.image}/>
         <p>{pokemon.name}</p>
         <p>{pokemon.types.toString()}</p>
       </div>
