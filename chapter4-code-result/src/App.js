@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Pokemon from './containers/Pokemon';
 import Pokedex from './containers/Pokedex';
 import Tabs from './components/Tabs';
@@ -25,8 +25,7 @@ class App extends Component {
           <Router>
             <div>
               <Tabs/>
-              {/* <Redirect from='/' to='/pokemon' /> */}
-              <Route path="/pokemon" component={Pokemon} />
+              <Route exact={true} path="/" component={Pokemon} />
               <Route path="/pokedex" component={Pokedex} />
             </div>
           </Router>

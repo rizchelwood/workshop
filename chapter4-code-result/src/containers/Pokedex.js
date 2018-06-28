@@ -27,7 +27,7 @@ class Pokedex extends Component {
     return (
       <div style={styles.list}>
       {pokemon.map(pokemon => {
-        return <Card key={pokemon.data.name} pokemon={pokemon.data} styles={styles} />
+        return <Card key={pokemon.data.name} pokemon={pokemon.data} styles={styles} showButton={false} />
       })}
       </div>
     );

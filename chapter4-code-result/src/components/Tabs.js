@@ -24,7 +24,7 @@ class Tabs extends Component {
       <div>
           <ul style={styles.list}>
             <li style={styles.item}>
-              <NavLink to="/pokemon"  style={styles.nav} activeStyle={styles.active}>Pokemon</NavLink>
+              <NavLink exact={true} to="/"  style={styles.nav} activeStyle={styles.active}>Pokemon</NavLink>
             </li>
             <li>
               <NavLink to="/pokedex" style={styles.nav} activeStyle={styles.active}>Pokedex</NavLink>

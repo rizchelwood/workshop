@@ -88,7 +88,7 @@ In between the `<Query>` tags insert the code below:
   if (loading) return <p>Your Pokemon are loading...</p>;
   if (error) return <p>Error: {error}</p>;
   return data.pokemons.map((pokemon) => {
-    return <Card key={pokemon.name} pokemon={pokemon} styles={cardStyle} />
+    return <Card key={pokemon.name} pokemon={pokemon} styles={styles} />
   });
 }}
 ```

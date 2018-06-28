@@ -55,7 +55,7 @@ class Pokemon extends Component {
             if (error) return <p>Error: {error}</p>;
             return data.pokemons.map(pokemon => {
               return (
-                <Card key={pokemon.name} pokemon={pokemon} styles={styles} addPokemon={this.addPokemon} />
+                <Card key={pokemon.name} pokemon={pokemon} styles={styles} addPokemon={this.addPokemon} showButton={true}/>
               );
             });
           }}

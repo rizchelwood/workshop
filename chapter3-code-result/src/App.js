@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Pokemon from './containers/Pokemon';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
+import Pokemon from './containers/Pokemon';
 
 const client = new ApolloClient({
   uri: "https://graphql-pokemon.now.sh/graphql"
