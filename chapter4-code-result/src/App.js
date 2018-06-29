@@ -12,6 +12,7 @@ const client = new ApolloClient({
 
 
 const appStyle = {
+  fontFamily: 'PokemonFireRedRegular',
   color: '#ff5c49',
   textAlign: 'center'
 }
