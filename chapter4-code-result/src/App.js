@@ -12,7 +12,7 @@ const client = new ApolloClient({
 
 
 const appStyle = {
-  color: 'red',
+  color: '#ff5c49',
   textAlign: 'center'
 }
 
