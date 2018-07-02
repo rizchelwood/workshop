@@ -67,3 +67,21 @@ docker run -p 3000:3000 -d IMAGE_NAME
 ```
 $ kubectl create -f deployment.yaml
 ```
+
+Your application should be runing but you need to find the IP Address of your cluster and and the NodePort of the service. 
+
+Get the IP Address of cluster node
+```
+# For clusters provisioned with IBM Cloud
+$ ibmcloud cs workers YOUR_CLUSTER_NAME
+```
+
+Get Nodeport
+```
+# For details on a specific Kubernetes service
+$ kubectl describe service workshop-service
+```
+
+## Final result
+
+You can now access the application at http://IP_ADDRESS:NODE_PORT in your browser! Congratulations you've completed the workshop!! If you'd like to check out additional information on unit testing or Istio, check out the other sections. 

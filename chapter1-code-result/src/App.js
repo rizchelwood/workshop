@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 const appStyle = {
-  color: 'red',
+  fontFamily: 'PokemonFireRedRegular',
+  color: '#ff5c49',
   textAlign: 'center'
 }
 

@@ -1,12 +1,12 @@
 # Chapter 1: Building the app boilerplate
 
-The application is built on the create-react-app boilerplate. Our goal for this section is to create the boilerplate for the application. You will learn how to set up the initial React components, styling in React, and applying linting rules.
+The app is built on the create-react-app boilerplate. Our goal for this section is to create the boilerplate. You will learn how to set up the initial React components, styling in React, and applying linting rules.
 
 Tools needed are a modern browser like Chrome and an account in CodeSandbox.io. 
 
 ## Instructions
 
-We are going to be building this project from scratch in Code Sanbox. You will need to create a Code Sandbox account if you do not already have one. CCode Sandbox will import all dependences from npm needed for the app. After you've created an account, click the plus button on the top right and select 'Import from Github' then enter the url of the [repo]( https://github.com/rizcheldayao/workshop/tree/master/chapter0-code). 
+We are going to be building this project from scratch in Code Sanbox. You will need to create a Code Sandbox account if you do not already have one. Code Sandbox will import all dependences from npm needed for the app. After you've created an account, click the plus button on the top right and select 'Import from Github' then enter the url of the [repo]( https://github.com/rizcheldayao/workshop/tree/master/chapter0-code). 
 
 Note: we will be using ES6 in this workshop. 
 
@@ -88,7 +88,8 @@ We are going to style our component with inline styling. We will center our `h1`
 
 ```
 const appStyle = {
-  color: 'red', 
+  fontFamily: 'PokemonFireRedRegular',
+  color: '#ff5c49',
   textAlign: 'center'
 }
 ```

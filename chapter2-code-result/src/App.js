@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Pokemon from './containers/Pokemon';
 
 const appStyle = {
-  color: 'red',
+  fontFamily: 'PokemonFireRedRegular',
+  color: '#ff5c49',
   textAlign: 'center'
 }
 
