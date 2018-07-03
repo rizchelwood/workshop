@@ -9,7 +9,7 @@ class Card extends Component {
         <img src={pokemon.image} alt={pokemon.name} style={styles.image}/>
         <p>{pokemon.name}</p>
         <p>{pokemon.types.toString()}</p>
-        {showButton && <button onClick={() => addPokemon(pokemon)}>Add Pokemon</button>}
+        {showButton && <button style={styles.button} onClick={() => addPokemon(pokemon)}>Add Pokemon</button>}
       </div>
     );
   }

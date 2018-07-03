@@ -15,7 +15,7 @@ const appStyle = {
   fontFamily: 'PokemonFireRedRegular',
   color: '#ff5c49',
   textAlign: 'center'
-}
+};
 
 class App extends Component {
   render() {

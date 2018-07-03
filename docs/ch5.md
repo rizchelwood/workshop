@@ -6,11 +6,13 @@ Our goal for this section is to deploy our application with Kubernetes on IBM Cl
 
 We are going to create an IBM account, Kubernetes cluster, and deploy our application from a provided yaml file. 
 
-Go here and pull down the repo. In this section, everything will need to be done locally. 
+Go [here](https://github.com/rizcheldayao/workshop) and pull down the repo then go to the `chapter5-code-result` folder. In this section, everything will need to be done locally. 
 
 ## Create IBM Cloud account and Kubernetes cluster
 
-Go here and create an IBM Cloud account. You will get an email after you've registered to confirm your account. To get a free cluster, I have a list of promo codes I will hand out for you to input. Click the 'Manage' link on the upper right and click on 'Billing. This is where you can input your promo code under the promo code section.
+Go here and create an IBM Cloud account. You will get an email after you've registered to confirm your account. To get a free cluster, I have a list of promo codes available [here](https://docs.google.com/spreadsheets/d/1TxSqPpL2BZhntPWLKinskJeUnoVVfU48Q9m8LXrbU64/edit?usp=sharing) to get a free cluster. 
+
+Once you're logged into the IBM Cloud UI, click the 'Manage' link on the upper right and click on 'Billing. This is where you can input your promo code under the promo code section.
 
 Download the [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started)
 
@@ -41,7 +43,7 @@ Copy and paste the response in the CLI.
 
 ## Dockerize application
 
-You do not need to dockerize your application if you want to deploy the application. Skip to the next section and your app will be deployed by a public Docker image created previously. 
+You do not need to dockerize your application if you want to deploy the application. Skip to the next section and your app will be deployed by a public Docker image created by me. 
 
 Create Docker account [here](https://cloud.docker.com/)
 

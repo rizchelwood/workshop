@@ -47,7 +47,7 @@ class Pokedex extends Component {
 export default Pokedex;
 ```
 
-Add the `react-router-dom` dependency in CodeSanbox or do `npm install react-router-dom` if you're running the app locally.
+Add the `react-router-dom` dependency in CodeSanbox or do `npm install react-router-dom --save` if you're running the app locally.
 
 In `src/App.js` import the dependency and Pokedex container below the other imports.
 
@@ -122,7 +122,7 @@ Import the Tabs component into `src/App.js` below the imports.
 import Tabs from "./components/Tabs";
 ```
 
-Insert the Tabs component above the first Route div. 
+Insert the Tabs component above the first Route tag. 
 
 ```
 <Tabs />
@@ -256,12 +256,24 @@ Add a new prop to our Card component for when a user wants to add a Pokemon to t
 
 We need to add the button and call the 'addPokemon' action to the Card component. In `src/components/Card.js` add the 'addPokemon' prop to the propTypes. Below the pokemon propType, add `addPokemon: PropTypes.func,`. 
 
+```
+Card.propTypes = {
+  styles: PropTypes.object.isRequired,
+  pokemon: PropTypes.object.isRequired,
+  addPokemon: PropTypes.func,
+}
+```
+
 After the `render()` function add `addPokemon` to this.props object. 
+
+```
+const { styles, pokemon, addPokemon } = this.props;
+```
 
 Create the button element and call the 'addPokemon' prop onClick below the `<p>{pokemon.types.toString()}</p>` tag. 
 
 ```
-<button onClick={() => addPokemon(pokemon)}>Add Pokemon</button>
+<button style={styles.button} onClick={() => addPokemon(pokemon)}>Add Pokemon</button>
 ```
 
 The Pokemon should be getting added to the state whenever a user clicks the button but we still need to show these Pokemon under the Pokedex tab. 
@@ -299,9 +311,34 @@ Show the Card component for each Pokemon in the Pokemon state. Replace `<p>This 
 
 You should be able to see your saved Pokemon in the Pokedex tab now. We should remove the button if the view is in the Pokedex since it's already added. We'll do this by adding a new prop showButton. 
 
-In the Pokedex container `src/containers/Pokedex.js`, add `showButton={false}` prop to the Card component. In the Pokemon container `src/containers/Pokemon.js`, add `showButton={true}` prop to the Card component.
+In the Pokedex container `src/containers/Pokedex.js`, add `showButton={false}` prop to the Card component. 
 
-In the Card component `src/components/Card.js` add `showButton: PropTypes.bool.isRequired` at the end of the `Card.propTypes.` object and add `showButton` to the `this.props` object under the `render()` function. Replace the `<button></button>` element with the below code:
+```
+<Card key={pokemon.data.name} pokemon={pokemon.data} styles={styles} showButton={false} />
+````
+
+In the Pokemon container `src/containers/Pokemon.js`, add `showButton={true}` prop to the Card component.
+
+```
+<Card key={pokemon.name} pokemon={pokemon} styles={styles} addPokemon={this.addPokemon} showButton={true}/>
+````
+
+In the Card component `src/components/Card.js` add `showButton: PropTypes.bool.isRequired` at the end of the `Card.propTypes.` object and add `showButton` to the `this.props` object under the `render()` function.
+
+```
+Card.propTypes = {
+  styles: PropTypes.object.isRequired,
+  pokemon: PropTypes.object.isRequired,
+  addPokemon: PropTypes.func,
+  showButton: PropTypes.bool.isRequired
+}
+```
+
+```
+const { styles, pokemon, addPokemon, showButton } = this.props;
+```
+
+Replace the `<button></button>` element with the code below:
 
 ```
 {showButton && <button style={styles.button} onClick={() => addPokemon(pokemon)}>Add Pokemon</button>}
