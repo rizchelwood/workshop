@@ -8,8 +8,9 @@ const client = new ApolloClient({
 });
 
 
-const appStyle = {
-  color: 'red',
+const styles = {
+  fontFamily: 'PokemonFireRedRegular',
+  color: '#ff5c49',
   textAlign: 'center'
 }
 
@@ -17,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
-        <div style={appStyle}>
+        <div style={styles}>
           <h1>My Pokemon App</h1>
           <Pokemon />
         </div>

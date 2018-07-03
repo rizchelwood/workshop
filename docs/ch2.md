@@ -65,6 +65,12 @@ const styles = {
   image: {
     width: "100px",
     height: "100px"
+  },
+  button: {
+    color: "#00b6cb",
+    padding: "5px",
+    border: "1px solid #00b6cb",
+    background: "#fff",
   }
 };
 ```

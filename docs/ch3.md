@@ -1,10 +1,10 @@
 # Chapter 3: Pull in data from Pokemon API using GraphQL
 
-Our goal for this section is to make an API request using GraphQL. You will learn how to integrate GraphQL into your React app.
+Our goal for this section is to make an API request using GraphQL to populate the list of Pokemon with real data. You will learn how to integrate GraphQL into your React app.
 
 ## Instructions
 
-We are going to call the Pokemon GraphQL API and show the data to our users. 
+We are going to call the Pokemon GraphQL API and show the Pokemon data to our users. 
 
 > GraphQL is a query language for APIs that allows communication between the client and server to perform data fetching.
 
@@ -42,7 +42,12 @@ const client = new ApolloClient({
 
 > Note: We will be using an existing Pokemon GraphQL API as our uri. 
 
-Wrap the `<div>` tags with `<ApolloProvider client={client}></ApolloProvider>`. This gives our app access to our Apollo Client and will allow our containers to fetch data from the GraphQL server. 
+Wrap the div tags with 
+
+```
+<ApolloProvider client={client}></ApolloProvider>
+``` 
+This gives our app access to our Apollo Client and will allow our containers to fetch data from the GraphQL server. 
 
 ## Make GraphQL query to get real data
 
@@ -53,9 +58,9 @@ import { Query } from "react-apollo";
 import gql from "graphql-tag";
 ```
 
-Remove the `mockData` variable and remove all of the code between the `<div>` tags. 
+Remove the `mockData` variable and remove all of the code between the div tags. 
 
-Create a Query component between the `<div>` tags. 
+Create a Query component between the div tags. 
 
 ```
 <Query>
@@ -64,7 +69,7 @@ Create a Query component between the `<div>` tags.
 
 Create the query we need to get from GraphQL. We only want to get the data back that we ask for. We will ask for numer, name, image and types for the first 100 Pokemon. If you'd like to see all of the options you can get back, click [here](https://graphql-pokemon.now.sh/graphql).
 
-Insert the `query` prop into the first `<Query>` tag. 
+Insert the `query` prop within the first Query tag. 
 
 ```
 query={gql`
@@ -81,7 +86,7 @@ query={gql`
 
 We need to pass the data to our 'Card' component and show a loading and error state. 
 
-In between the `<Query>` tags insert the code below: 
+In between the Query tags insert the code below: 
 
 ```
 {({ loading, error, data }) => {
@@ -93,12 +98,14 @@ In between the `<Query>` tags insert the code below:
 }}
 ```
 
-The above code displays different results depending on if we're loading the data, it errors out, or if we have the data. It passes the each Pokemon Object to the 'Card' component like we had in the previous chapter. 
+The above code displays different results depending on if we're loading the data, it errors out, or if we have the data. It passes the each Pokemon object to the 'Card' component like we had in the previous chapter. 
 
 We need to make changes to our Card component to handle the new data we're being given. 
 
-In `src/components/Card.js` remove the `<p>` tag with the `{pokemon.abilities}` variable and change `{pokemon.type}` to `{pokemon.types.toString()}`; 
+In `src/components/Card.js` remove the p tag with the `{pokemon.abilities}` variable and change `{pokemon.type}` to `{pokemon.types.toString()}`; 
 
 ## Final result
 
-You should now have an app pulling in real data through GraphQL and displaying them in a card view to the user. 
+You should now have the app pulling in real data through GraphQL and displaying them in a card view to the user. 
+
+![Chapter 3 result](./images/chapter3.png)

@@ -16,7 +16,7 @@ const styles = {
   active: {
     borderBottom: '1px solid #00b6cb'
   }
-}
+};
 
 class Tabs extends Component {
   render() {

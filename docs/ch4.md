@@ -1,6 +1,6 @@
 # Chapter 4: Create Pokedex container with Redux state management
 
-Our goal for this section is create a Pokedex container and use Redux to manage its state.
+Our goal for this section is create a Pokedex container and use Redux to manage and populate its state.
 
 ## Instructions
 
@@ -8,11 +8,10 @@ We are going to create a Pokedex container and a Redux action, reducer, and stor
 
 ## Add routes for Pokemon and Pokedex view
 
-Create Pokdex in component in `src/containers/Pokedex.js`. Insert the following in your Pokedex container. 
+Create Pokdex in container in `src/containers/Pokedex.js`. Insert the following in your Pokedex container. 
 
 ```
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 const styles = {
   list: {
@@ -21,11 +20,13 @@ const styles = {
     justifyContent: "center"
   },
   card: {
-    padding: "20px",
+    color: "#707070",
+    padding: "20px 20px 0 20px",
     width: "200px",
     height: "250px",
-    border: "1px solid red",
-    margin: "20px"
+    border: "2px solid #E8E8E8",
+    margin: "20px",
+    boxShadow: "2px 2px 2px #E8E8E8"
   },
   image: {
     width: "100px",
@@ -48,19 +49,18 @@ export default Pokedex;
 
 Add the `react-router-dom` dependency in CodeSanbox or do `npm install react-router-dom` if you're running the app locally.
 
-In `src/App.js` import `react-router-dom` and the Pokedex container below the previous imports. 
+In `src/App.js` import the dependency and Pokedex container below the other imports.
 
 ```
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Pokedex from './containers/Pokedex';
 ```
 
-Insert your Router under the `<h1></h1>` tag. 
+Insert your Router under the h1 tag and remove the Pokemon tag. 
 
 ```
   <Router>
     <div>
-      <Tabs/>
       <Route exact={true} path="/" component={Pokemon} />
       <Route path="/pokedex" component={Pokedex} />
     </div>
@@ -86,13 +86,13 @@ const styles = {
   nav: {
     margin: '20px',
     textDecoration: 'none',
-    color: 'red',
+    color: '#00b6cb',
     borderBottom: 'none'
   },
   active: {
-    borderBottom: '1px solid red'
+    borderBottom: '1px solid #00b6cb'
   }
-}
+};
 
 class Tabs extends Component {
   render() {
@@ -116,7 +116,19 @@ export default Tabs;
 
 > We are creating an unordered list of links so the user can click and be directed to the tab they choose. 
 
-At this point, you should be able to go back and forth from your Pokemon and Pokedex component. 
+Import the Tabs component into `src/App.js` below the imports.
+
+```
+import Tabs from "./components/Tabs";
+```
+
+Insert the Tabs component above the first Route div. 
+
+```
+<Tabs />
+```
+
+At this point, you should be able to go back and forth from your Pokemon and Pokedex component by clicking on the Tabs component.. 
 
 ## Set up Redux to manage Pokedex view
 
@@ -129,9 +141,9 @@ react-redux
 redux
 ```
 
-Create an action to be able to add Pokemon. Add a folder in file to put all of your actions in `src/actions/index.js`.
+Create an action to be able to add Pokemon. Add a folder and file to put all of your actions in `src/actions/index.js`.
 
-In the file, create the action with the following type and parameter.
+In the file, create the action with the following type and parameter. The code below takes in pokemon as a parameter and returns 'ADD_POKEMON' type and the pokemon parameter.
 
 ```
 export const addPokemon = pokemon => {
@@ -142,9 +154,9 @@ export const addPokemon = pokemon => {
 }
 ```
 
-Create a reducer to contain all of your states and what to do if the Add Pokemon action has been called in `src/reducers/index.js`.
+Create a reducer to contain all of your states and what to do if the 'Add Pokemon' action has been called in `src/reducers/index.js`.
 
-In the file, create the reducer.
+In the file, create the reducer. The code below sets the initial state as an empty array then when the 'ADD_POKEMON' action is called, it adds the pokemon parameter from the action and appends it to the existing state array.
 
 ```
 import { combineReducers } from 'redux';
@@ -175,6 +187,7 @@ Import the following dependencies below the others.
 ```
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import rootReducer from './reducers';
 ```
 
 Create the store with the reducer you've created and wrap your `<App />` component in the Provider tags. 
@@ -196,15 +209,16 @@ Now you should be able to access the state in your components.
 
 We want to be able to add Pokemon to our Pokedex. We need to hook up our addPokemon action to our Pokemon container. 
 
-Import dependencies from `react-redux` below the other dependencies. 
+In `src/containers/Pokemon.js`, import the dependency and action below the other imports. 
 
 ```
 import { connect } from 'react-redux';
+import { addPokemon } from '../actions';
 ```
 
-Enable the container to be able to dispatch the addPokemon action and have access to the pokemon state. 
+Enable the container to be able to dispatch the 'addPokemon' action and have access to the pokemon state and be able to add to our state.
 
-Before the `export default Pokemon` line insert the following: 
+Insert the following before the `export default Pokemon` line.
 
 ```
 const mapStateToProps = state => ({
@@ -218,7 +232,7 @@ const mapDispatchToProps = dispatch => ({
 
 Replace `export default Pokemon` with `export default connect(mapStateToProps, mapDispatchToProps)(Pokemon);`.
 
-This allows us to access the Pokemon state and addPokemon action through props. In the component, let's create an addPokemon function to call `this.props.addPokemon`. This will be a callback function that will later be called in the Card component. 
+This allows us to access the Pokemon state and 'addPokemon' action through props. In the component, let's create an addPokemon function to call `this.props.addPokemon`. This will be a callback function that will later be called in the Card component. 
 
 Add the following code between the class and render function: 
 
@@ -240,19 +254,19 @@ Add a new prop to our Card component for when a user wants to add a Pokemon to t
 <Card key={pokemon.name} pokemon={pokemon} styles={styles} addPokemon={this.addPokemon} />
 ```
 
-We need to add the button and call the addPokemon action to the Card component. Add the addPokemon prop to the propTypes. Below the pokemon propType, add `addPokemon: PropTypes.func,`. 
+We need to add the button and call the 'addPokemon' action to the Card component. In `src/components/Card.js` add the 'addPokemon' prop to the propTypes. Below the pokemon propType, add `addPokemon: PropTypes.func,`. 
 
-After the render() function add `addPokemon` to this.props object. 
+After the `render()` function add `addPokemon` to this.props object. 
 
-Create the button element and call the addPokemon prop onClick below the `<p>{pokemon.types.toString()}</p>` tag. 
+Create the button element and call the 'addPokemon' prop onClick below the `<p>{pokemon.types.toString()}</p>` tag. 
 
 ```
 <button onClick={() => addPokemon(pokemon)}>Add Pokemon</button>
 ```
 
-The Pokemon should be getting added to the Pokemon state whenever a user clicks the button but we still need to show these Pokemon under the Pokedex tab. 
+The Pokemon should be getting added to the state whenever a user clicks the button but we still need to show these Pokemon under the Pokedex tab. 
 
-In `src/containers/Pokedex` import the react-redux dependency below the other imports and Card component.
+In `src/containers/Pokedex` import the dependency and Card component below the other imports. 
 
 ```
 import { connect } from 'react-redux';
@@ -269,26 +283,38 @@ const mapStateToProps = state => ({
 
 and replace `export default Pokedex` with `export default connect(mapStateToProps)(Pokedex);`. 
 
+Between the `render()` function and `return`, create the props object.
+
+```
+const { pokemon } = this.props;
+```
+
 Show the Card component for each Pokemon in the Pokemon state. Replace `<p>This is my Pokedex</p>` with 
 
 ```
-      {pokemon.map(pokemon => {
-        return <Card key={pokemon.data.name} pokemon={pokemon.data} styles={styles} />
-      })}
+  {pokemon.map(pokemon => {
+    return <Card key={pokemon.data.name} pokemon={pokemon.data} styles={styles} />
+  })}
 ```
 
 You should be able to see your saved Pokemon in the Pokedex tab now. We should remove the button if the view is in the Pokedex since it's already added. We'll do this by adding a new prop showButton. 
 
-In the Pokedex container, add `showButton={false}` prop to the Card component. In the Pokemon container, add `showButton={true}` prop to the Card component.
+In the Pokedex container `src/containers/Pokedex.js`, add `showButton={false}` prop to the Card component. In the Pokemon container `src/containers/Pokemon.js`, add `showButton={true}` prop to the Card component.
 
-In the Card component add `  showButton: PropTypes.bool.isRequired` at the end of the `Card.propTypes.` object and to the `this.props` object under the `render()` function. Replace the `<button></button>` element with the below code:
+In the Card component `src/components/Card.js` add `showButton: PropTypes.bool.isRequired` at the end of the `Card.propTypes.` object and add `showButton` to the `this.props` object under the `render()` function. Replace the `<button></button>` element with the below code:
 
 ```
-{showButton && <button onClick={() => addPokemon(pokemon)}>Add Pokemon</button>}
+{showButton && <button style={styles.button} onClick={() => addPokemon(pokemon)}>Add Pokemon</button>}
 ```
 
 The above code will now only show the button if the card is in the Pokemon list. 
 
+## Clean up code
+
+If you'd like to clean up the code, you can remove the Card styles in the Pokemon and Pokedex containers and move it to the Card component since there are overlapping styles. 
+
 ## Final result
 
 Now you have a working app to add Pokemon to your Pokedex!! Congratulations you've completed the application of this workshop. Next, we will deploy this completed application with Kubernetes.
+
+![Workshop gif](./images/workshop.gif)

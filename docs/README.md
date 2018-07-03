@@ -8,6 +8,8 @@ The workshop will be broken up into several chapters, each one covering a differ
 
 We will be building a Pokemon app! Our app will be calling the Pokedex API to get a list of Pokemon then the user will be able to add Pokemon to their Pokedex.
 
+![Workshop gif](./images/workshop.gif)
+
 ## Workshop Content 
 - Chapter 1: Build the app boilerplate
   - Basic introduction to app's code structure and building the boilerplate code

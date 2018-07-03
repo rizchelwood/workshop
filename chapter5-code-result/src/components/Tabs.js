@@ -10,13 +10,13 @@ const styles = {
   nav: {
     margin: '20px',
     textDecoration: 'none',
-    color: 'red',
+    color: '#00b6cb',
     borderBottom: 'none'
   },
   active: {
-    borderBottom: '1px solid red'
+    borderBottom: '1px solid #00b6cb'
   }
-}
+};
 
 class Tabs extends Component {
   render() {
