@@ -1,6 +1,6 @@
 # Chapter 1: Building the app boilerplate
 
-The app is built on the create-react-app boilerplate. Our goal for this section is to create the boilerplate. You will learn how to set up the initial React components, styling in React, and applying linting rules.
+The app is built on [create-react-app](https://github.com/facebookincubator/create-react-app). Our goal for this section is to create the React boilerplate. You will learn how to set up the initial React components, styling in React, and applying linting rules.
 
 Tools needed are a modern browser like Chrome and an account in CodeSandbox.io. 
 
@@ -16,7 +16,7 @@ Note: we will be using ES6 in this workshop.
 
 The dependencies have already been added to the `package.json`. If you'd like to view them, they are all the dependencies that start with `eslint`. 
 
-Create a file named `.eslintrc` and paste the following snippet into the file: 
+Create a file named `.eslintrc` in the root folder and paste the following snippet into the file: 
 
 ```
 {
@@ -28,7 +28,9 @@ If you'd like to override any of the settings from `eslint-config-react-app`, ed
 
 ## Create your first component
 
-We need to create our first component to render on the page. Create a `App.js` file under the `src` folder. Import the React and Component dependencies from the react package. 
+> React is a JavaScript library for creating user interfaces. It composes the UI in modular components.
+
+We need to create our first component to render on the page. Create the file `src/App.js`. Import the React and Component dependencies from the react package at the top of the `src/App.js` file. 
 
 ```
 import React, { Component } from 'react';
@@ -51,17 +53,29 @@ class App extends Component {
 
 Let's print out 'My Pokemon App' onto the page within the `<div></div>` element. 
 
-Insert `<h1>My Pokemon App</h1>` between the div tags. 
+Insert the h1 tags between the div tags.
 
-We need to export our component so other components can import and access it. Add `export default App;` at the end of the file. 
+```
+<h1>My Pokemon App</h1>
+``` 
+
+We need to export our component so other components can import and access it. Add the export at the end of the file.
+
+```
+export default App;
+``` 
 
 At this point, you should have a completed component, but we need to hook it up to our UI to be able to see it.
 
 ## Link the UI to our React components
 
-Create a `div` element with the id `root` in the `index.html` file under the `public` folder. Insert `<div id="root"></div>` in the body tag. 
+Create a div element with the id `root` in the `public/index.html` file. Insert the below code in the body tag.
 
-Import these dependencies from the npm package at the top of `src/index.js` file: 
+```
+<div id="root"></div>
+```
+
+Import these dependencies at the top of `src/index.js` file: 
 
 ```
 import React from 'react';
@@ -76,18 +90,20 @@ Import our 'App' component that we created in the previous step.
 import App from './App';
 ```
 
-We need to render our 'App' component under the tag with the id 'root'. Insert the following code at the end of the `index.js` file: 
+We need to render our 'App' component under the tag with the id `root`. Insert the following code at the end of the `src/index.js` file: 
 
 ```
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
+You should see the 'My Pokemon App' text in the browser. 
+
 ## Style your component
 
-We are going to style our component with inline styling. We will center our `h1` tag and make the text red in our 'App' component. We will create a variable at the top of our file between our imports and class with our styling specifications. 
+We are going to style our component with inline styling. We will center our h1 tag and color the text in our 'App' component. We will create a variable at the top of our file between our imports and class with our styling specifications in `src/App.js`. 
 
 ```
-const appStyle = {
+const styles = {
   fontFamily: 'PokemonFireRedRegular',
   color: '#ff5c49',
   textAlign: 'center'
@@ -97,10 +113,12 @@ const appStyle = {
 Pass the variable to the div element. 
 
 ```
-  style={appStyle}
+  style={styles}
 ```
 
 ## Final result 
 
 This is the start of our Pokemon app we will be bulding in this workshop. Next, we will build out the containers and components for showing a list of Pokemon. 
+
+![Chapter 1 result](./images/chapter1.png)
 

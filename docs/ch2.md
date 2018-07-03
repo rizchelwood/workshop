@@ -1,6 +1,6 @@
 # Chapter 2: Build Pokemon card view 
 
-Our goal for this section is to create a container and component to build a list of Pokemon with mock data. You will learn how to more about creating a container and component, and pass props from parent to child. 
+Our goal for this section is to create a container and component to build a list of Pokemon with mock data. You will learn how to create a container and component, and pass props from parent to child. 
 
 ## Instructions
 
@@ -14,9 +14,9 @@ To ensure clean code and easier readability, we are going to separate our compon
 
 > A presentational component is a "dumb" component that only receives data from its parent and should never change the data itself. They are be reusable and should only render the views. 
 
-Create a `containers` folder under the `src` folder. In the `containers` folder create a `Pokemon.js` file. 
+Create a `src/container` folder. Create a `src/containers/Pokemon.js` file. 
 
-Import React and Component and create the Pokemon class to extend Component. 
+Import the following dependencies and create the Pokemon class that extends Component. 
 
 ```
 import React, { Component } from 'react';
@@ -32,29 +32,39 @@ class Pokemon extends Component {
 export default Pokemon;
 ```
 
-Import the Pokemon container into `App.js` file below the other imports `import Pokemon from './containers/Pokemon';`
+Import the Pokemon container into `src/App.js` file below the other imports 
 
-Create a `<Pokemon />` tag after the `<h1>` tag.
+```
+import Pokemon from './containers/Pokemon';
+````
 
-In the Pokemon container, insert the styles we will use to display a list of Pokemon in between the imports and class and apply to the `<div>` tag. 
+Create a Pokemon tag after the h1 tag.
+
+```
+<Pokemon />
+```
+
+In the Pokemon container `src/containers/Pokemon.js`, insert the styles we will use to display a list of Pokemon in between the imports and class and apply to the div tag. 
 
 ```
 const styles = {
   list: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center"
   },
   card: {
-    padding: '20px',
-    width: '200px',
-    height: '250px',
-    border: '1px solid red',
-    margin: '20px',
+    color: "#707070",
+    padding: "20px 20px 0 20px",
+    width: "200px",
+    height: "250px",
+    border: "2px solid #E8E8E8",
+    margin: "20px",
+    boxShadow: "2px 2px 2px #E8E8E8"
   },
   image: {
-    width: '100px',
-    height: '100px',
+    width: "100px",
+    height: "100px"
   }
 };
 ```
@@ -65,7 +75,7 @@ const styles = {
 
 Let's create some Pokemon mock data for our container to display. 
 
-Insert the code below under the `styles` variable. 
+Insert the `mockData` variable under the `styles` variable. 
 
 ```
 const mockData = [{
@@ -94,14 +104,14 @@ const mockData = [{
 }]
 ```
 
-We need to create a card for each element in the array to display to the user. Let's use the `map()` method to create a new array returning the a card for each Pokemon.
+We need to create a card for each element in the array to display to the user. Let's use the `map()` method to create a new array returning a card for each Pokemon.
 
-Insert the `map()` function within the `<div>` tags. 
+Insert the `map()` function between the div tags. 
 
 ```
   {mockData.map(pokemon => {
-    return <div key={pokemon.name} style={styles}>
-        <img src={pokemon.image} alt={pokemon.name}/>
+    return <div key={pokemon.name} style={styles.card}>
+        <img src={pokemon.image} alt={pokemon.name.image} style={styles.image}/>
         <p>{pokemon.name}</p>
         <p>{pokemon.abilities}</p>
         <p>{pokemon.type}</p>
@@ -109,13 +119,13 @@ Insert the `map()` function within the `<div>` tags.
   })}
 ```
 
-At this point, you should be able to see four cards with Pokemon information. Let's pull out the card element into its own presentational component. 
+At this point, you should be able to see Pokemon information but there is no layout or styling. Let's pull out the card element into its own presentational component. 
 
 ## Create the Card presentational component
 
-Create a `components` folder under the `src` folder. In the `components` folder create a `Card.js` file. 
+Create a `src/components` folder. Create a `src/components/Card.js` file. 
 
-Import React and Component and create the Pokemon class to extend Component. 
+Import dependencies and  create the Card class to extend Component. 
 
 ```
 import React, { Component } from 'react';
@@ -131,34 +141,31 @@ class Card extends Component {
 export default Card;
 ```
 
-Import the Card container into `src/containers/Pokemon.js` file below the other imports `import Card from '../components/Card';`
-
-Replace
+Import the Card component into the Pokemon container `src/containers/Pokemon.js` file below the other imports 
 
 ```
-return <div key={pokemon.name} style={styles}>
-    <img src={pokemon.image} alt={pokemon.name}/>
-    <p>{pokemon.name}</p>
-    <p>{pokemon.abilities}</p>
-    <p>{pokemon.type}</p>
-  </div>
+import Card from '../components/Card';
 ```
 
-with 
+Replace the `return` code in the `map()` function with
 
 ```
 return <Card key={pokemon.name} pokemon={pokemon} styles={styles} />
 ```
 
-The above code is passing the pokemon object and card styles as props to the Card component. This will allow us to use these variables in our Card component. 
+
+The above code is passing the Pokemon object and card styles as props to the Card component. This will allow us to use these variables in our Card component. 
 
 > Props aka properties are parameters of a component. Props are how components talk to each other and how parent containers or components can pass down data to child components. 
 
 We need to add the prop-types npm dependency to be able to use props in the component. If you're using CodeSanbox, click 'Add Dependency' under the Dependencies dropdown and enter `prop-types`. If you're doing this locally, do an `npm install prop-types --save`. 
 
-Insert `import PropTypes from 'prop-types';` in the Card component below the other imports.
+Insert the prop-types import in the Card component `src/components/Card.js` below the other imports.
+```
+import PropTypes from 'prop-types';
+```
 
-React has built-in typechecking on props for a component. Let's add that to our Card component. At the end of the class and before the export insert the code below: 
+React has built-in typechecking on props for a component. Let's add that to our Card component. In between the Card class and export line insert the propTypes:
 
 ```
 Card.propTypes = {
@@ -167,7 +174,14 @@ Card.propTypes = {
 }
 ```
 
-We need to use these props in our component. Insert `const { styles, pokemon } = this.props;` in between `render()` and `return`. Now let's show our prop values to the user. Replace the `<div><div/>` tags with the following: 
+We need to use these props in our component. Insert 
+
+```
+const { styles, pokemon } = this.props;
+```
+in between the `render()` function and `return`. 
+
+Now let's show our prop values to the user. Replace the div tags with the following: 
 
 ```
 <div key={pokemon.name} style={styles.card}>
@@ -178,9 +192,10 @@ We need to use these props in our component. Insert `const { styles, pokemon } =
 </div>
 ```
 
-You can see above how we're using data from the parent container but we're not manipulating it in any way thus why it's called a presentational component. 
+You can see how we're passing down the data from the parent container to the child component and displaying the it to the user.
 
 ## Final Result
 
 You should now have a working application showing a list of Pokemons in a card view! In the next chapter, we will pull in real Pokemon data using the Pokemon API with GraphQL. 
 
+![Chapter 2 result](./images/chapter2.png)
