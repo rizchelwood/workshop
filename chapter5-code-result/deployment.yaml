@@ -27,6 +27,6 @@ spec:
     spec:
       containers:
       - name: workshop
-        image: rizcheldayao/workshop
+        image: <docker_username>/workshop
         ports:
         - containerPort: 3000

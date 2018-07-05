@@ -6,7 +6,7 @@ Our goal for this section is to deploy our application with Kubernetes on IBM Cl
 
 We are going to create an IBM account, Kubernetes cluster, and deploy our application from a provided yaml file. 
 
-Go [here](https://github.com/rizcheldayao/workshop) and pull down the repo then go to the `chapter5-code-result` folder. In this section, everything will need to be done locally. 
+Go [here](https://github.com/rizcheldayao/workshop) and clone the repo then go to the `chapter5-code-result` folder. In this section, everything will need to be done locally. 
 
 ## Create IBM Cloud account and Kubernetes cluster
 
@@ -25,33 +25,38 @@ $ ibmcloud plugin install container-service -r Bluemix
 
 Log into your IBM Cloud account
 ```
-$ ibmcloud login -a https://api.ng.bluemix.net
+$ ibmcloud login
 ```
 
 Create your cluster
 ```
 $ ibmcloud cs cluster-create --name YOUR_CLUSTER_NAME
 ```
+Your cluster will take a few minutes to deploy. You can check its status in the IBM Cloud UI if you click on the hamburger menu on the upper left hand side then go to 'Container'. It will be listed under the Clusters tab.
 
 Configure Kubernetes cluster
 ```
-$ bx cs cluster-config YOUR_CLUSTER_NAME
+$ ibmcloud cs cluster-config YOUR_CLUSTER_NAME
 ```
 
-Copy and paste the response in the CLI.
+**You must copy and paste the response in the CLI.**
 
 
 ## Dockerize application
-
-You do not need to dockerize your application if you want to deploy the application. Skip to the next section and your app will be deployed by a public Docker image created by me. 
 
 Create Docker account [here](https://cloud.docker.com/)
 
 Install Docker CLI [here](https://docs.docker.com/install/)
 
-Build Docker image
+Export your username
 ```
-$ docker build -t IMAGE_NAME
+$ export docker_username="YOUR_DOCKER_USERNAME"
+```
+
+Build and push Docker image (the image will be built from the Dockerfile)
+```
+$ docker build -t $docker_username/workshop .
+$ docker push $docker_username/workshop
 ```
 
 Your image should be listed
@@ -59,31 +64,31 @@ Your image should be listed
 $ docker images
 ```
 
-Run your image
+Run your image in a container
 ```
-docker run -p 3000:3000 -d IMAGE_NAME
+docker run -p 3000:3000 -d $docker_username/workshop
 ```
 
+You can access it at http://localhost:3000/. 
+
 ## Deploy application 
+
+Modify the `deployment.yaml` file. Replace `<docker_username>` with your Docker username.
 
 ```
 $ kubectl create -f deployment.yaml
 ```
 
-Your application should be runing but you need to find the IP Address of your cluster and and the NodePort of the service. 
+Your application should be runing but you need to find the public IP Address of your cluster to access it.
 
-Get the IP Address of cluster node
+Get the public IP Address of cluster node
 ```
 # For clusters provisioned with IBM Cloud
 $ ibmcloud cs workers YOUR_CLUSTER_NAME
 ```
 
-Get Nodeport
-```
-# For details on a specific Kubernetes service
-$ kubectl describe service workshop-service
-```
-
 ## Final result
 
-You can now access the application at http://IP_ADDRESS:NODE_PORT in your browser! Congratulations you've completed the workshop!! If you'd like to check out additional information on unit testing or Istio, check out the other sections. 
+You can now access the application at http://IP_ADDRESS:30080 in your browser! Congratulations you've completed the workshop!! If you'd like to check out additional information on unit testing or Istio, check out the other sections. 
+
+You can view an existing deployed application at http://169.62.129.200:30080/.
