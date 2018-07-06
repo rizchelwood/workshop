@@ -10,7 +10,8 @@ module.exports = {
           ['ch3', 'Chapter 3: Pull in data from Pokemon API using GraphQL'],
           ['ch4', 'Chapter 4: Create Pokedex container with Redux state management'],
           ['ch5', 'Chapter 5: Deploy application on Kubernetes'],
-          ['istio', 'Istio']
+          ['istio', 'Istio'],
+          ['callforcode', 'Call for Code']
         ]
       }
   };
