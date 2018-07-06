@@ -6,13 +6,15 @@ Tools needed are a modern browser like Chrome and an account in CodeSandbox.io.
 
 ## Instructions
 
-We are going to be building this project from scratch in Code Sanbox. You will need to create a Code Sandbox account if you do not already have one. Code Sandbox will import all dependences from npm needed for the app. After you've created an account, click the plus button on the top right and select 'Import from Github' then enter the url of the [repo]( https://github.com/rizcheldayao/workshop/tree/master/chapter0-code). 
+We are going to be building this project from scratch in CodeSanbox.io. You will need to create a Code Sandbox account if you do not already have one. CodeSandbox will import all dependences from npm needed for the app. After you've created an account, click the plus button on the top right and select 'Import from Github' then enter the url of the [repo]( https://github.com/rizcheldayao/workshop/tree/master/chapter0-code). 
 
 Note: we will be using ES6 in this workshop. 
 
 ## Applying ESLint rules
 
 > ESLint is an open source project and tool that identifies and reports patterns found in JavaScript code. It allows you to identify certain rules to ensure use of clear and consistent coding conventions, while automating the application of those rules. 
+
+CodeSandbox already applies prettier to your sandbox but if you'd like to apply rules locally, follow the directions below in this section. If not, go to the next section.
 
 The dependencies have already been added to the `package.json`. If you'd like to view them, they are all the dependencies that start with `eslint`. 
 
