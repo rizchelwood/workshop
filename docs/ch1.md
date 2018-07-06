@@ -6,7 +6,7 @@ Tools needed are a modern browser like Chrome and an account in CodeSandbox.io.
 
 ## Instructions
 
-We are going to be building this project from scratch in CodeSanbox.io. You will need to create a Code Sandbox account if you do not already have one. CodeSandbox will import all dependences from npm needed for the app. After you've created an account, click the plus button on the top right and select 'Import from Github' then enter the url of the [repo]( https://github.com/rizcheldayao/workshop/tree/master/chapter0-code). 
+We are going to be building this project from scratch in CodeSanbox.io. You will need to create a CodeSandbox account if you do not already have one. CodeSandbox will import all dependences from npm needed for the app. After you've created an account, click the plus button on the top right and select 'Import from Github' then enter the url of the [repo]( https://github.com/rizcheldayao/workshop/tree/master/chapter0-code). 
 
 Note: we will be using ES6 in this workshop. 
 
