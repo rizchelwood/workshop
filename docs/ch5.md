@@ -10,7 +10,7 @@ Go [here](https://github.com/rizcheldayao/workshop) and clone the repo then go t
 
 ## Create IBM Cloud account and Kubernetes cluster
 
-Go here and create an IBM Cloud account. You will get an email after you've registered to confirm your account. To get a free cluster, I have a list of promo codes available [here](https://docs.google.com/spreadsheets/d/1TxSqPpL2BZhntPWLKinskJeUnoVVfU48Q9m8LXrbU64/edit?usp=sharing) to get a free cluster. 
+Go [here](https://ibm.biz/BdYDAi) to create an IBM Cloud account. You will get an email after you've registered to confirm your account. To get a free cluster, I have a list of promo codes available [here](https://docs.google.com/spreadsheets/d/1TxSqPpL2BZhntPWLKinskJeUnoVVfU48Q9m8LXrbU64/edit?usp=sharing) to get a free cluster. 
 
 Once you're logged into the IBM Cloud UI, click the 'Manage' link on the upper right and click on 'Billing. This is where you can input your promo code under the promo code section.
 

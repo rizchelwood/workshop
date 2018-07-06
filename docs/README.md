@@ -19,7 +19,7 @@ We will be building a Pokemon app! Our app will be calling the Pokedex API to ge
   - Use GraphQL to query Pokemon API and pass down real data to the containers and components
 - Chapter 4: Create Pokedex container with Redux state management
   - Use Redux to store and populate the Pokedex container
-- Chapter 4: Deploy app on Kubernetes
+- Chapter 5: Deploy app on Kubernetes
   - Deploy app on Kubernetes on the IBM Cloud
 
 ## Extra Content
