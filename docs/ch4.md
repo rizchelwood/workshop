@@ -357,4 +357,4 @@ Now you have a working app to add Pokemon to your Pokedex!! Congratulations you'
 ![Workshop gif](./images/workshop.gif)
 
 ### Resources
-- Redux: https://redux.js.org/introduction
+- Redux: [https://redux.js.org/introduction](https://redux.js.org/introduction)

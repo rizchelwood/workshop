@@ -125,6 +125,6 @@ This is the start of our Pokemon app we will be bulding in this workshop. Next, 
 ![Chapter 1 result](./images/chapter1.png)
 
 ### Resources
-- create-react-app: https://github.com/facebookincubator/create-react-app
-- React: https://reactjs.org/
+- create-react-app: [https://github.com/facebookincubator/create-react-app](https://github.com/facebookincubator/create-react-app)
+- React: [https://reactjs.org/](https://reactjs.org/)
 

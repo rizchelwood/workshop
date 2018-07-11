@@ -93,10 +93,10 @@ $ ibmcloud cs workers YOUR_CLUSTER_NAME
 
 You can now access the application at http://IP_ADDRESS:30080 in your browser! Congratulations you've completed the workshop!! If you'd like to check out additional information on unit testing or Istio, check out the other sections. 
 
-You can view an existing deployed application at http://169.62.129.200:30080/.
+You can view an existing deployed application at [http://169.62.129.200:30080/](http://169.62.129.200:30080/).
 
 
 ### Resources
-- IBM Cloud: https://console.bluemix.net/
-- Docker: http://docker.io/
-- Kubernetes: https://kubernetes.io/
+- IBM Cloud: [https://console.bluemix.net/](https://console.bluemix.net/)
+- Docker: [http://docker.io/](http://docker.io/)
+- Kubernetes: [https://kubernetes.io/](https://kubernetes.io/)

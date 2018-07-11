@@ -207,5 +207,5 @@ You should now have a working application showing a list of Pokemons in a card v
 ![Chapter 2 result](./images/chapter2.png)
 
 ### Resources
-- React: https://reactjs.org/
-- Presentational and container components: https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0
+- React: [https://reactjs.org/](https://reactjs.org/)
+- Presentational and container components: [https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
