@@ -71,7 +71,7 @@ At this point, you should have a completed component, but we need to hook it up 
 
 ## Link the UI to our React components
 
-Create a div element with the id `root` in the `public/index.html` file. Insert the below code in the body tag.
+Create a div element with the id `root` in the `public/index.html` file. Insert the below code between the body tags.
 
 ```
 <div id="root"></div>
