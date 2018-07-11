@@ -109,3 +109,8 @@ In `src/components/Card.js` remove the p tag with the `{pokemon.abilities}` vari
 You should now have the app pulling in real data through GraphQL and displaying them in a card view to the user. 
 
 ![Chapter 3 result](./images/chapter3.png)
+
+### Resources
+- GraphQL: https://graphql.org/
+- Open source GraphQL tools: https://github.com/gramps-graphql
+- Pokemon API: https://graphql-pokemon.now.sh/graphql

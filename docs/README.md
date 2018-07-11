@@ -28,4 +28,6 @@ Due to lack of time, we will not be able to complete the next sections but these
 - Istio: Introducing Istio
   - Introduce Istio and provide external workshop information
 
+## Contributors
 
+Hi, my name is Rizchel Dayao and I've created this workshop for FullStack London 2018. If you have any questions, feel free to email me at rdayao@us.ibm.com or on Twitter @rizcheldayao.

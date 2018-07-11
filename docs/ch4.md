@@ -355,3 +355,6 @@ If you'd like to clean up the code, you can remove the Card styles in the Pokemo
 Now you have a working app to add Pokemon to your Pokedex!! Congratulations you've completed the application of this workshop. Next, we will deploy this completed application with Kubernetes.
 
 ![Workshop gif](./images/workshop.gif)
+
+### Resources
+- Redux: https://redux.js.org/introduction

@@ -2,8 +2,6 @@
 
 Our goal for this section is to deploy our application with Kubernetes on IBM Cloud. 
 
-> Kubernetes is an orchestration tool for automating and maintaining deployments, scaling and managing containerized applications. 
-
 ## Instructions
 
 We are going to create an IBM account, Kubernetes cluster, and deploy our application from a provided yaml file. 
@@ -75,6 +73,8 @@ You can access it at http://localhost:3000/.
 
 ## Deploy application 
 
+> Kubernetes is an orchestration tool for automating and maintaining deployments, scaling and managing containerized applications. 
+
 Modify the `deployment.yaml` file. Replace `<docker_username>` with your Docker username.
 
 ```
@@ -94,3 +94,9 @@ $ ibmcloud cs workers YOUR_CLUSTER_NAME
 You can now access the application at http://IP_ADDRESS:30080 in your browser! Congratulations you've completed the workshop!! If you'd like to check out additional information on unit testing or Istio, check out the other sections. 
 
 You can view an existing deployed application at http://169.62.129.200:30080/.
+
+
+### Resources
+- IBM Cloud: https://console.bluemix.net/
+- Docker: http://docker.io/
+- Kubernetes: https://kubernetes.io/
