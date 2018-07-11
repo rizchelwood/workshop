@@ -14,7 +14,7 @@ To ensure clean code and easier readability, we are going to separate our compon
 
 > A presentational component is a "dumb" component that only receives data from its parent and should never change the data itself. They are be reusable and should only render the views. 
 
-Create a `src/container` folder. Create a `src/containers/Pokemon.js` file. 
+Create a `src/containers` folder. Create a `src/containers/Pokemon.js` file. 
 
 Import the following dependencies and create the Pokemon class that extends Component. 
 

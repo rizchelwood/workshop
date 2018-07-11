@@ -71,7 +71,7 @@ Insert your Router under the h1 tag and remove the Pokemon tag.
 
 You should be able to enter either path and it will show the right component. We want the user to be able to switch tabs between the Pokemon list and Pokedex instead of entering in the path. Let's create a Tabs component.
 
-Create a Tabs component in `src/components/Tabs`. Paste this into the Tabs component. 
+Create a Tabs component in `src/components/Tabs.js`. Paste this into the Tabs component. 
 
 ```
 import React, { Component } from 'react';
@@ -119,7 +119,7 @@ export default Tabs;
 Import the Tabs component into `src/App.js` below the imports.
 
 ```
-import Tabs from "./components/Tabs";
+import Tabs from "./components/Tabs.js";
 ```
 
 Insert the Tabs component above the first Route tag. 
