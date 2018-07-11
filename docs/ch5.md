@@ -44,6 +44,8 @@ $ ibmcloud cs cluster-config YOUR_CLUSTER_NAME
 
 ## Dockerize application
 
+> Docker is a tool that builds, ships, and runs applications using containers. Docker can package the application and deploy it as one package. 
+
 Create Docker account [here](https://cloud.docker.com/)
 
 Install Docker CLI [here](https://docs.docker.com/install/)
