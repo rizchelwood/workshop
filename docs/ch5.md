@@ -2,6 +2,8 @@
 
 Our goal for this section is to deploy our application with Kubernetes on IBM Cloud. 
 
+> Kubernetes is an orchestration tool for automating and maintaining deployments, scaling and managing containerized applications. 
+
 ## Instructions
 
 We are going to create an IBM account, Kubernetes cluster, and deploy our application from a provided yaml file. 
