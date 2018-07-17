@@ -11,7 +11,8 @@ module.exports = {
           ['ch4', 'Chapter 4: Create Pokedex container with Redux state management'],
           ['ch5', 'Chapter 5: Deploy application on Kubernetes'],
           ['istio', 'Istio'],
-          ['callforcode', 'Call for Code']
+          ['callforcode', 'Call for Code'],
+          ['feedback', 'Feedback']
         ]
       }
   };
