@@ -10,24 +10,6 @@ We are going to be building this project from scratch in CodeSandbox.io. You wil
 
 Note: we will be using ES6 in this workshop. 
 
-## Applying ESLint rules
-
-> ESLint is an open source project and tool that identifies and reports patterns found in JavaScript code. It allows you to identify certain rules to ensure use of clear and consistent coding conventions, while automating the application of those rules. 
-
-CodeSandbox already applies prettier to your sandbox but if you'd like to apply rules locally, follow the directions below in this section. If not, go to the next section.
-
-The dependencies have already been added to the `package.json`. If you'd like to view them, they are all the dependencies that start with `eslint`. 
-
-Create a file named `.eslintrc` in the root folder and paste the following snippet into the file: 
-
-```
-{
-  "extends": "react-app"
-}
-```
-
-If you'd like to override any of the settings from `eslint-config-react-app`, edit the `eslintrc` file.
-
 ## Create your first component
 
 > React is a JavaScript library for creating user interfaces. It composes the UI in modular components.
