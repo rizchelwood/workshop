@@ -10,33 +10,37 @@ Go [here](https://github.com/rizcheldayao/workshop) and clone the repo then go t
 
 ## Create IBM Cloud account and Kubernetes cluster
 
-1. Create an IBM account and apply a promo code
+1. Create an IBM account
 
-Go [here](https://ibm.biz/BdYDAi) to create an IBM Cloud account. You will get an email after you've registered to confirm your account. To get a free cluster, I have a list of promo codes available [here](https://docs.google.com/spreadsheets/d/1TxSqPpL2BZhntPWLKinskJeUnoVVfU48Q9m8LXrbU64/edit?usp=sharing) to get a free cluster. 
+Go [here](https://ibm.biz/BdYDAi) to create an IBM Cloud account. You will get an email after you've registered to confirm your account. 
 
-Once you're logged into the IBM Cloud UI, click the 'Manage' link on the upper right and click on 'Billing. This is where you can input your promo code under the promo code section.
+2. Apply promo code
 
-2. Download the [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started)
+To get a free cluster, I have a list of promo codes available [here](https://docs.google.com/spreadsheets/d/1TxSqPpL2BZhntPWLKinskJeUnoVVfU48Q9m8LXrbU64/edit?usp=sharing) to get a free cluster. 
 
-3. Downlaod the [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+Once you're logged into the IBM Cloud UI, click the 'Manage' link in the header and click on 'Billing. This is where you can input your promo code under the promo code section.
 
-4. Install the container service plugin.
+3. Download the [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started)
+
+4. Downlaod the [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+
+5. Install the container service plugin.
 ```
 ibmcloud plugin install container-service -r Bluemix
 ```
 
-5. Log into your IBM Cloud account
+6. Log into your IBM Cloud account
 ```
 ibmcloud login
 ```
 
-6. Create your cluster
+7. Create your cluster
 ```
 ibmcloud cs cluster-create --name YOUR_CLUSTER_NAME
 ```
 Your cluster will take a few minutes to deploy. You can check its status in the IBM Cloud UI if you click on the hamburger menu on the upper left hand side then go to 'Container'. It will be listed under the Clusters tab.
 
-7. Configure Kubernetes cluster
+8. Configure Kubernetes cluster
 ```
 ibmcloud cs cluster-config YOUR_CLUSTER_NAME
 ```
