@@ -29,6 +29,8 @@ Once you're logged into the IBM Cloud UI, click the 'Manage' link in the header 
 ibmcloud plugin install container-service -r Bluemix
 ```
 
+To verify that the plug-in is installed properly, run `ibmcloud plugin list`. The Container Service plug-in is displayed in the results as `container-service`.
+
 6. Log into your IBM Cloud account
 ```
 ibmcloud login
@@ -38,14 +40,16 @@ ibmcloud login
 ```
 ibmcloud cs cluster-create --name YOUR_CLUSTER_NAME
 ```
-Your cluster will take a few minutes to deploy. You can check its status in the IBM Cloud UI if you click on the hamburger menu on the upper left hand side then go to 'Container'. It will be listed under the Clusters tab.
+Your cluster will take a few minutes to deploy. You can check its status in the IBM Cloud UI if you click on the hamburger menu on the upper left hand side then go to 'Containers'. It will be listed under the Clusters tab. You can also create a cluster in the same location in the UI. 
 
 8. Configure Kubernetes cluster
 ```
 ibmcloud cs cluster-config YOUR_CLUSTER_NAME
 ```
 
-**You must copy and paste the response in the CLI.**
+9. **You must copy and paste the response in the CLI.**
+
+Consider placing the EXPORT command in your bash profile to avoid running these commands every time you open a new shell.
 
 
 ## Dockerize application
