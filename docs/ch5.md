@@ -12,7 +12,7 @@ Go [here](https://github.com/rizcheldayao/workshop) and clone the repo then go t
 
 1. Create an IBM account
 
-Go [here](https://ibm.biz/BdYDAi) to create an IBM Cloud account. You will get an email after you've registered to confirm your account. 
+Go [here](https://ibm.biz/BdYXCy) to create an IBM Cloud account. You will get an email after you've registered to confirm your account. 
 
 2. Apply promo code
 
